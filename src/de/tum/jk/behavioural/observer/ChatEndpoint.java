@@ -45,13 +45,14 @@ public class ChatEndpoint implements ActionListener {
 	private Session session;
 	private static final String WS_URL = "ws://onesandheroes.io:8025/websockets/chat";
 
-	public ChatEndpoint(ChatSubject chatsub) {
+	public ChatEndpoint(ChatSubject chatsub) throws InterruptedException {
 		this.chatsub = chatsub;
 		if (chatsub == null) {
 			chatsub = new ChatSubject();
 		}
 		createUI();
-
+		
+		Thread.sleep(2000);
 		ClientManager client = ClientManager.createClient();
 		try {
 			client.connectToServer(this, new URI(WS_URL));

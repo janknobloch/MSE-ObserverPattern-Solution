@@ -18,7 +18,7 @@ import de.tum.jk.behavioural.observer.subject.ChatSubject;
 
 public class Main {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InterruptedException {
 
 		// Create a ChatSubject
 		ChatSubject chatsub = new ChatSubject();
